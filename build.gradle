@@ -12,12 +12,12 @@ plugins {
     id "nebula.release" version "6.3.2"
 }
 
-plugins {
+/*plugins {
     id "nebula.project" version "3.4.1"
 }
-
-project.group = 'testnebula'
-project.description = 'Test Semantic versioning using nebula'
+*/
+project.group = 'gitflowexp'
+project.description = 'Test git flow plugin'
 
 
 apply plugin: 'java'
@@ -29,22 +29,27 @@ repositories {
     jcenter()
     mavenCentral()
 }
-/*
+
+
+jar {
+   baseName = "git-flow"
+}
+
 uploadArchives {
     repositories {
         mavenDeployer {
-            repository(url: "http://dev-nexus-01.telensa.com:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}/") {
-                authentication(userName: "sag", password: "Telensa01");
+            repository(url: "http://localhost:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}/") {
+                authentication(userName: "admin", password: "admin123");
             }
             pom.version = "${project.version}"
-            pom.artifactId = "testnebula"
-            pom.groupId = "testnebula"
+            pom.artifactId = "git-flow-exp"
+            pom.groupId = "testgitflow"
         }
     }
-}*/
+}
 
 // publishing to nexus using nebula plugin
-publishing {
+/*publishing {
     repositories {
         maven {
             url "http://localhost:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
@@ -56,16 +61,16 @@ publishing {
         mavenLocal()
     }
 }
-
+*/
 //apply plugin: 'nebula.nebula-release'
 
-release {
+/*release {
     // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
      defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
 }
-
+*/
 /*
 nebulaRelease {
     shortenedBranchPattern = /(?:(?:bugfix|feature|hotfix|release)(?:-|\/))?(.+)/
 }*/
-tasks.release.finalizedBy tasks.publish
+//tasks.release.finalizedBy tasks.publish
