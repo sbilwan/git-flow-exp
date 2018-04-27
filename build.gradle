@@ -12,10 +12,10 @@ plugins {
     id "nebula.release" version "6.3.2"
 }
 
-/*plugins {
+plugins {
     id "nebula.project" version "3.4.1"
 }
-*/
+
 project.group = 'gitflowexp'
 project.description = 'Test git flow plugin'
 
@@ -35,6 +35,7 @@ jar {
    baseName = "git-flow"
 }
 
+/*
 uploadArchives {
     repositories {
         mavenDeployer {
@@ -46,10 +47,10 @@ uploadArchives {
             pom.groupId = "testgitflow"
         }
     }
-}
+}*/
 
 // publishing to nexus using nebula plugin
-/*publishing {
+publishing {
     repositories {
         maven {
             url "http://localhost:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
@@ -61,14 +62,14 @@ uploadArchives {
         mavenLocal()
     }
 }
-*/
+
 //apply plugin: 'nebula.nebula-release'
 
-/*release {
+release {
     // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
      defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
 }
-*/
+
 /*
 nebulaRelease {
     shortenedBranchPattern = /(?:(?:bugfix|feature|hotfix|release)(?:-|\/))?(.+)/
