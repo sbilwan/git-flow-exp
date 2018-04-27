@@ -63,7 +63,7 @@ publishing {
     }
 }
 
-//apply plugin: 'nebula.nebula-release'
+apply plugin: 'nebula.nebula-release'
 
 release {
     // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
@@ -74,4 +74,4 @@ release {
 nebulaRelease {
     shortenedBranchPattern = /(?:(?:bugfix|feature|hotfix|release)(?:-|\/))?(.+)/
 }*/
-//tasks.release.finalizedBy tasks.publish
+ //tasks.release.finalizedBy tasks.publish
