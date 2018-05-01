@@ -8,21 +8,21 @@ buildscript {
     }
 }
 */
-/* plugins {
+ plugins {
     id "nebula.release" version "6.3.2"
 }
-*/
+
  plugins {
     id "nebula.project" version "3.4.1"
 }
 
 
 
-
+/*
 plugins {
     id 'pl.allegro.tech.build.axion-release' version '1.8.1'
 }
-
+*/
 project.group = 'gitflowexp'
 project.description = 'Test git flow plugin'
 
@@ -79,10 +79,10 @@ publishing {
 
 //apply plugin: 'nebula.nebula-release'
 
-/*release {
+release {
     // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
      defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
-}*/
+}
 
 /*
 nebulaRelease {
