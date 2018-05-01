@@ -8,12 +8,16 @@ buildscript {
     }
 }
 */
-plugins {
+/* plugins {
     id "nebula.release" version "6.3.2"
+}
+*/
+plugins {
+    id "nebula.project" version "3.4.1"
 }
 
 plugins {
-    id "nebula.project" version "3.4.1"
+    id 'pl.allegro.tech.build.axion-release' version '1.8.1'
 }
 
 project.group = 'gitflowexp'
@@ -22,7 +26,7 @@ project.description = 'Test git flow plugin'
 
 apply plugin: 'java'
 apply plugin: 'maven'
-apply plugin: 'nebula.nebula-release'
+//apply plugin: 'nebula.nebula-release'
 
 
 repositories {
@@ -35,6 +39,13 @@ jar {
    baseName = "git-flow"
 }
 
+scmVersion {
+    tag {
+        prefix = 'release-flow-test'
+    }
+}
+
+project.version = scmVersion.version
 /*
 uploadArchives {
     repositories {
@@ -53,7 +64,7 @@ uploadArchives {
 publishing {
     repositories {
         maven {
-            url "http://localhost:8081/repository/testnebula-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
+            url "http://localhost:8081/repository/testreleaseplugin-${project.version.toString().endsWith('-SNAPSHOT') ? 'snapshots' : 'releases'}"
             credentials {
                 username "admin"
                 password "admin123"
@@ -65,10 +76,10 @@ publishing {
 
 //apply plugin: 'nebula.nebula-release'
 
-release {
+/*release {
     // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
      defaultVersionStrategy = org.ajoberstar.gradle.git.release.opinion.Strategies.SNAPSHOT
-}
+}*/
 
 /*
 nebulaRelease {
