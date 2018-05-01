@@ -42,13 +42,13 @@ jar {
    baseName = "git-flow"
 }
 
-scmVersion {
+/*scmVersion {
     tag {
         prefix = 'release-flow-test'
     }
 }
 
-project.version = scmVersion.version
+project.version = scmVersion.version*/
 /*
 uploadArchives {
     repositories {
@@ -77,7 +77,7 @@ publishing {
     }
 }
 
-apply plugin: 'nebula.nebula-release'
+//apply plugin: 'nebula.nebula-release'
 
 /*release {
     // Let the default versioning strategy be the maven style -SNAPSHOT, instead of nebula's devSnapshot
